@@ -27,4 +27,4 @@ The operator will monitor the storage daemons to ensure the cluster is healthy. 
 
 The Rook operator also creates the Rook agents. These agents are pods deployed on every Kubernetes node. Each agent configures a Flexvolume plugin that integrates with Kubernetes’ volume controller framework. All storage operations required on the node are handled such as attaching network storage devices, mounting volumes, and formating the filesystem.
 
-![alt text](https://github.com/erickeliseo/katacoda-scenarios/blob/master/rook-cassandra/images/rook-kubernetes.png "Ver Status")
+![alt text](https://rook.io/docs/rook/v0.8/media/kubernetes.png "Architecture")
