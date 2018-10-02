@@ -8,7 +8,7 @@
         "steps": [
             {
                 "title" : "Wait for Kubernetes & Rook to be ready",
-                "text": "1.wait-k8s-px.md"
+                "text": "1.setup-k8s-rook.md"
             },
             {
                 "title" : "Create Cassandra StorageClass",
