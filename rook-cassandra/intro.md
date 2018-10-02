@@ -8,7 +8,7 @@ For more details about the status of storage solutions currently supported by Ro
 
 ### Getting Started
 
-Starting Rook in your cluster is as simple as two kubectl commands. See our Quickstart guide for the details on what you need to get going.
+Starting Rook in your cluster is as simple as two kubectl commands. See our [Quickstart](https://rook.io/docs/rook/v0.8/ceph-quickstart.html) guide for the details on what you need to get going.
 
 Once you have a Rook cluster running, walk through the guides for block, object, and file to start consuming the storage in your cluster:
 
@@ -17,16 +17,14 @@ Once you have a Rook cluster running, walk through the guides for block, object,
 * Shared File System: Create a file system to be shared across multiple pods
 
 
-### Other things you should know
+### Architecture
 
-To learn more about how why running Redis on Portworx is a great idea take a look at the following links:
-* Guide to run [Cassandra in Docker] containers(https://portworx.com/use-case/cassandra-docker-container/)
-* Guide to [Kubernetes and Cassandra](https://docs.portworx.com/applications/cassandra.html)
-* [Introduction to Portworx](https://portworx.com/products/introduction/)
-* [Customer Stories](https://portworx.com/customers/)
-* [STORK open source project](https://portworx.com/stork-storage-orchestration-kubernetes/).
+With Rook running in the Kubernetes cluster, Kubernetes applications can mount block devices and filesystems managed by Rook, or can use the S3/Swift API for object storage. The Rook operator automates configuration of storage components and monitors the cluster to ensure the storage remains available and healthy.
 
+The Rook operator is a simple container that has all that is needed to bootstrap and monitor the storage cluster. The operator will start and monitor ceph monitor pods and a daemonset for the OSDs, which provides basic RADOS storage. The operator manages CRDs for pools, object stores (S3/Swift), and file systems by initializing the pods and other artifacts necessary to run the services.
 
-This scenario assumes you have already covered the following scenarios:
-* [How to install Portworx on Kubernetes](https://www.katacoda.com/portworx/scenarios/deploy-px-k8s)
-* [How to create Portworx volumes on Kubernetes](https://www.katacoda.com/portworx/scenarios/px-k8s-vol-basic)
+The operator will monitor the storage daemons to ensure the cluster is healthy. Ceph mons will be started or failed over when necessary, and other adjustments are made as the cluster grows or shrinks. The operator will also watch for desired state changes requested by the api service and apply the changes.
+
+The Rook operator also creates the Rook agents. These agents are pods deployed on every Kubernetes node. Each agent configures a Flexvolume plugin that integrates with Kubernetes’ volume controller framework. All storage operations required on the node are handled such as attaching network storage devices, mounting volumes, and formating the filesystem.
+
+![alt text](https://www.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png "Ver Status")

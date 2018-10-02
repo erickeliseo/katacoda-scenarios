@@ -1,13 +1,13 @@
 {
     "pathwayTitle": "Kubernetes",
     "icon": "fa-kubernetes",
-    "title": "Cassandra Stateful Set on Portworx",
+    "title": "Cassandra Stateful Set on Rook",
     "description": "Deploying a stateful Cassandra database on Kubernetes using Portworx, showing HA failover scenario, expanding volume dynamically, and taking snapshots to recover from user error.",
     "difficulty": "Intermediate",
     "details": {
         "steps": [
             {
-                "title" : "Wait for Kubernetes & Portworx to be ready",
+                "title" : "Wait for Kubernetes & Rook to be ready",
                 "text": "1.wait-k8s-px.md"
             },
             {
