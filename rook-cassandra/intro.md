@@ -6,11 +6,15 @@ Rook integrates deeply into cloud native environments leveraging extension point
 
 For more details about the status of storage solutions currently supported by Rook, please refer to the project status section of the Rook repository. We plan to continue adding support for other storage systems and environments based on community demand and engagement in future releases.
 
-### High Level Overview
+### Getting Started
 
-First we will deploy Cassandra in a stateful set with only a single node (replicas=1) to show the basics of node failover. We will create some data, force Cassandra to flush the data to disk, and then failover the Cassandra pod and show how it comes back up with it's data intact.
+Starting Rook in your cluster is as simple as two kubectl commands. See our Quickstart guide for the details on what you need to get going.
 
-Then, we're going to show how we can scale the cluster to 3 nodes and dynamically create volumes for each.
+Once you have a Rook cluster running, walk through the guides for block, object, and file to start consuming the storage in your cluster:
+
+* Block: Create block storage to be consumed by a pod
+* Object: Create an object store that is accessible inside or outside the Kubernetes cluster
+* Shared File System: Create a file system to be shared across multiple pods
 
 
 ### Other things you should know
