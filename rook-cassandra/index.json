@@ -11,8 +11,8 @@
                 "text": "1.setup-k8s-rook.md"
             },
             {
-                "title" : "Create Cassandra StorageClass",
-                "text": "2.create-vol.md"
+                "title" : "Monitoring",
+                "text": "2.Monitoring-k8s-rook.md"
             },
             {
                 "title" : "Deploy cassandra",
