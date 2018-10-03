@@ -7,7 +7,7 @@
     "details": {
         "steps": [
             {
-                "title" : "Wait for Kubernetes & Rook to be ready",
+                "title" : "Ceph Storage Quickstart",
                 "text": "1.setup-k8s-rook.md"
             },
             {
