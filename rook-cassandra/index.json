@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Kubernetes",
     "icon": "fa-kubernetes",
-    "title": "Cassandra Stateful Set on Rook",
+    "title": "Cassandra Stateful Set on Kubernetes with Rook",
     "description": "Deploying a stateful Cassandra database on Kubernetes using Rook",
     "difficulty": "Intermediate",
     "details": {
