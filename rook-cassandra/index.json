@@ -2,7 +2,7 @@
     "pathwayTitle": "Kubernetes",
     "icon": "fa-kubernetes",
     "title": "Cassandra Stateful Set on Rook",
-    "description": "Deploying a stateful Cassandra database on Kubernetes using Portworx, showing HA failover scenario, expanding volume dynamically, and taking snapshots to recover from user error.",
+    "description": "Deploying a stateful Cassandra database on Kubernetes using Rook",
     "difficulty": "Intermediate",
     "details": {
         "steps": [
