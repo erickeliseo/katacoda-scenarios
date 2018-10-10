@@ -16,7 +16,7 @@
             },
             {
                 "title" : "Deploy cassandra",
-                "text": "3.cassandra-app.md"
+                "text": "3.Deploy-Cassandra.md"
             },
             {
                 "title" : "Inspect the volume",
