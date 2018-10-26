@@ -16,7 +16,7 @@
   },
   "backend": {
     "trainingid": "openshift-3-10",
-    "imageid": "openshift-3-11", "port": 8443
+    "imageid": "openshift-3-10", "port": 8443
   },
   "details": {
     "finish": {
