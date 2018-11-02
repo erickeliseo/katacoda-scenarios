@@ -12,6 +12,16 @@ To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{exe
 
 Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scenario.
 
+## Add Istio to the path
+
+Now we need to add `istioctl` to the path.
+
+Execute `export PATH=$PATH:~/installation/istio-1.0.2/bin`{{execute interrupt T1}}.
+
+Now try it. Check the version of `istioctl`.
+
+Execute `istioctl version`{{execute T1}}.
+
 ## Create external routes
 
 OpenShift uses the concept of Routes to expose HTTP services outside the cluster.
@@ -24,27 +34,10 @@ oc expose svc grafana -n istio-system; \
 oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system`{{execute interrupt T1}}
 
-## Add Istio to the path
 
-Now we need to add `istioctl` to the path.
+## Instalando aplicacion demo
+`oc apply -f <(istioctl kube-inject -f ~/installation/istio-1.0.2/samples/bookinfo/platform/kube/bookinfo.yaml)
+`{{execute T1}}
 
-Execute `export PATH=$PATH:~/installation/istio-1.0.2/bin`{{execute interrupt T1}}.
-
-Now try it. Check the version of `istioctl`.
-
-Execute `istioctl version`{{execute T1}}.
-
-
-
-
-
-#tar -xvzf istio-1.0.2-linux.tar.gz
-export PATH="$PATH:~/installation/istio-1.0.2/bin"
-#oc apply -f ~/installation/istio-1.0.2/install/kubernetes/helm/istio/templates/crds.yaml
-#oc apply -f ~/installation/istio-1.0.2/install/kubernetes/istio-demo-auth.yaml
-# Exponer Servicios
-#oc expose svc istio-ingressgateway -n istio-system; \
-#oc expose svc servicegraph -n istio-system; \
-#oc expose svc grafana -n istio-system; \
-#oc expose svc prometheus -n istio-system; \
-#oc expose svc tracing -n istio-system
+`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/bookinfo-gateway.yaml
+`{{execute T1}}

@@ -21,7 +21,7 @@ oc adm policy add-scc-to-user privileged -z default -n istio-system
 oc adm policy add-scc-to-user privileged -z default -n default
 # -----------------
 #tar -xvzf istio-1.0.2-linux.tar.gz
-export PATH="$PATH:~/installation/istio-1.0.2/bin"
+#export PATH="$PATH:~/installation/istio-1.0.2/bin"
 #oc apply -f ~/installation/istio-1.0.2/install/kubernetes/helm/istio/templates/crds.yaml
 #oc apply -f ~/installation/istio-1.0.2/install/kubernetes/istio-demo-auth.yaml
 # Exponer Servicios
