@@ -22,9 +22,8 @@ oc adm policy add-scc-to-user privileged -z default -n default
 # -----------------
 tar -xvzf istio-1.0.3-linux.tar.gz
 export PATH="$PATH:~/installation/istio-1.0.3/bin"
-cd ~/installation/istio-1.0.3/bin
-oc apply -f install/kubernetes/helm/istio/templates/crds.yaml
-oc apply -f install/kubernetes/istio-demo-auth.yaml
+oc apply -f ~/installation/istio-1.0.3/install/kubernetes/helm/istio/templates/crds.yaml
+oc apply -f ~/installation/istio-1.0.3/install/kubernetes/istio-demo-auth.yaml
 oc get pods -w -n istio-system
 # Exponer Servicios
 oc expose svc istio-ingressgateway -n istio-system; \
@@ -32,6 +31,3 @@ oc expose svc servicegraph -n istio-system; \
 oc expose svc grafana -n istio-system; \
 oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system
-oc apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)
-oc apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
-watch oc get pods
