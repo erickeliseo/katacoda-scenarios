@@ -29,7 +29,7 @@
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "What is Service Mesh and why we need it?", "text": "installation.md" },
+        { "title": "What is Service Mesh and why we need it?", "text": "installation.md" }
     ]
   }
 }
