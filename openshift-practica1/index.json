@@ -29,9 +29,8 @@
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "What is Service Mesh and why we need it?", "text": "1what-is-service-mesh.md" },
-        { "title": "Istio Details", "text": "2details.md" },
-        { "title": "Istio installation", "text": "3installation.md" }
+        { "title": "What is Service Mesh and why we need it?", "text": "install-istio.md" },
+        { "title": "Instalando Aplicación de Demo", "text": "deploydemoapp.md" }
     ]
   }
 }
