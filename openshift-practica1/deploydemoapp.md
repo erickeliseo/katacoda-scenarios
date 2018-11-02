@@ -1,4 +1,3 @@
-## Instalando aplicacion demo
 Instalamos la aplicacion de demos Bookinfo:
 `oc apply -f <(istioctl kube-inject -f ~/installation/istio-1.0.2/samples/bookinfo/platform/kube/bookinfo.yaml)
 `{{execute T1}}
@@ -10,7 +9,7 @@ Generamos un gateway para el ingreso al aplicativo:
 Verificarmos que todos los pods esten en estado `Running`, luego podemos presionar `CTRL+C`.
 `oc get pods `{{execute T1}}
 
-## Create external routes
+## Creación de rutas para acceso desde el Exterior
 Creamos rutas para poder ingresar a las herramientas: `Grafana`, `Prometheus`, `Tracing`, etc:
 
 `oc expose svc istio-ingressgateway -n istio-system; \

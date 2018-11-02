@@ -12,7 +12,7 @@ Para verificar la creación de los pods, eejcutamos `oc get pods -w -n istio-sys
 
 Cuando todos este en estado `Running`, podemos presionar `CTRL+C`.
 
-## Add Istio to the path
+## Agregar Istio al PATH
 
 Para ejecutar el comando `istioctl`, es necesario agregarlo al PATH:
 
