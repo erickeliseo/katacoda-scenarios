@@ -34,4 +34,4 @@ oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system
 oc apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)
 oc apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
-oc get pods
+watch oc get pods
