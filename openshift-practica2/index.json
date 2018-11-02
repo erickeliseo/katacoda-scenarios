@@ -29,7 +29,8 @@
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "What is Service Mesh and why we need it?", "text": "1what-is-service-mesh.md" }
+        { "title": "Traffic Shaping Microservices Connections", "text": "TrafficShaping.md" },
+        { "title": "Istio Canary deployment", "text": "Canarydeployment.md" }
     ]
   }
 }
