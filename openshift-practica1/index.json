@@ -24,12 +24,11 @@
     },
     "intro": {
         "text": "intro.md",
-        "credits": "http://developers.redhat.com",
         "code": "set-env.sh",
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "Deploying Istio on OpenShift", "text": "1what-is-service-mesh.md" }
+        { "title": "Instalando Istio en OpenShift", "text": "1what-is-service-mesh.md" }
     ]
   }
 }
