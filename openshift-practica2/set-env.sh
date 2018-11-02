@@ -33,3 +33,8 @@ oc expose svc tracing -n istio-system
 
 oc apply -f <(istioctl kube-inject -f ~/installation/istio-1.0.2/samples/bookinfo/platform/kube/bookinfo.yaml)
 oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/bookinfo-gateway.yaml
+
+# ---------------
+# oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-all-v1.yaml
+# oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-all-v2.yaml
+# oc apply  apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-reviews-90-10.yaml

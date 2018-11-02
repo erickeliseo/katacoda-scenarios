@@ -40,3 +40,10 @@ oc expose svc servicegraph -n istio-system; \
 oc expose svc grafana -n istio-system; \
 oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system`{{execute interrupt T1}}
+
+`oc get pods
+`{{execute T1}}
+
+Ahora podemos larzar carga a la aplicación de demo.
+
+Revisión de Dashboards

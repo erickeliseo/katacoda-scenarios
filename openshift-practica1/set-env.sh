@@ -19,6 +19,8 @@ oc adm policy add-scc-to-user anyuid -z istio-sidecar-injector-service-account -
 oc adm policy add-scc-to-user anyuid -z istio-galley-service-account -n istio-system
 oc adm policy add-scc-to-user privileged -z default -n istio-system
 oc adm policy add-scc-to-user privileged -z default -n default
+
+
 # -----------------
 #tar -xvzf istio-1.0.2-linux.tar.gz
 #export PATH="$PATH:~/installation/istio-1.0.2/bin"
