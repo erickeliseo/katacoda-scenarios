@@ -1,4 +1,4 @@
-To install Istio in the cluster, we need first to make sure that we are logged in as an `system:admin` user.
+Para instalar Istio, lo primero que debemos hacer en logearnos con el usuario: `system:admin`
 
 To log in the OpenShift cluster, type `oc login -u system:admin`{{execute T1}}
 
