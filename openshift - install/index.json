@@ -2,7 +2,7 @@
   "pathwayTitle": "Service Mesh with Istio",
   "title": "OpenShift Practica 2",
   "icon": "fa-openshift",
-  "description": "Understand the problem that Istio solves",
+  "description": "Connecting and Controlling Microservices",
   "difficulty": "Basic",
   "time": "30 minutes",
   "files": [],
