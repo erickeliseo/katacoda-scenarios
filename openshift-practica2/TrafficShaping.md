@@ -1,7 +1,7 @@
 Revisamos los pods de Istio:  `oc get pods -w -n istio-system`{{execute T1}}
 Cuando todos este en estado `Running`, podemos presionar `CTRL+C`.
 
-Revisamos los pods de la aplicaciób de Demo:  `oc get pods`{{execute T1}}
+Revisamos los pods de la aplicación de Demo:  `oc get pods`{{execute T1}}
 Cuando todos este en estado `Running`, podemos presionar `CTRL+C`.
 
 Generemos tráfico con Postman
