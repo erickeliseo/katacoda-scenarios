@@ -2,7 +2,7 @@
   "pathwayTitle": "Service Mesh with Istio",
   "title": "OpenShift Practica 1",
   "icon": "fa-openshift",
-  "description": "Deploying Istio on OpenShift",
+  "description": "Connecting and Controlling Microservices",
   "difficulty": "Basic",
   "time": "30 minutes",
   "files": [],
@@ -24,11 +24,14 @@
     },
     "intro": {
         "text": "intro.md",
+        "credits": "http://developers.redhat.com",
         "code": "set-env.sh",
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "Instalando Istio en OpenShift", "text": "1what-is-service-mesh.md" }
+        { "title": "What is Service Mesh and why we need it?", "text": "1what-is-service-mesh.md" },
+        { "title": "Istio Details", "text": "2details.md" },
+        { "title": "Istio installation", "text": "3installation.md" }
     ]
   }
 }
