@@ -1,0 +1,35 @@
+{
+  "pathwayTitle": "Service Mesh with Istio",
+  "title": "OpenShift Practica 1",
+  "icon": "fa-openshift",
+  "description": "Deploying Istio on OpenShift",
+  "difficulty": "Basic",
+  "time": "30 minutes",
+  "files": [],
+  "environment": {
+      "showdashboard": true,
+      "dashboard": "Web Console",
+      "uilayout": "terminal",
+      "uieditorpath": "/root/installation/",
+      "uisettings": "java",
+      "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "trainingid": "openshift-3-10",
+    "imageid": "openshift-3-10", "port": 8443
+  },
+  "details": {
+    "finish": {
+        "text": "finish.md"
+    },
+    "intro": {
+        "text": "intro.md",
+        "credits": "http://developers.redhat.com",
+        "code": "set-env.sh",
+        "courseData": "run-init.sh"
+    },
+    "steps": [
+        { "title": "What is Service Mesh and why we need it?", "text": "installation.md" },
+    ]
+  }
+}
