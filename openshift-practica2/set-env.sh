@@ -30,3 +30,6 @@ oc expose svc servicegraph -n istio-system; \
 oc expose svc grafana -n istio-system; \
 oc expose svc prometheus -n istio-system; \
 oc expose svc tracing -n istio-system
+
+oc apply -f <(istioctl kube-inject -f ~/installation/istio-1.0.2/samples/bookinfo/platform/kube/bookinfo.yaml)
+oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/bookinfo-gateway.yaml
