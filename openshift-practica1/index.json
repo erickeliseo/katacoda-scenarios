@@ -1,8 +1,8 @@
 {
   "pathwayTitle": "Service Mesh with Istio",
-  "title": "OpenShift Practica 1",
+  "title": "OpenShift-Istio - Práctica 1",
   "icon": "fa-openshift",
-  "description": "Connecting and Controlling Microservices",
+  "description": "Instalando Istio en Openshift",
   "difficulty": "Basic",
   "time": "30 minutes",
   "files": [],
@@ -29,8 +29,8 @@
         "courseData": "run-init.sh"
     },
     "steps": [
-        { "title": "What is Service Mesh and why we need it?", "text": "install-istio.md" },
-        { "title": "Instalando Aplicación de Demo", "text": "deploydemoapp.md" }
+        { "title": "Instalando Istio en Openshift", "text": "install-istio.md" },
+        { "title": "Instalando Demo - Bookinfo Application ", "text": "deploydemoapp.md" }
     ]
   }
 }
