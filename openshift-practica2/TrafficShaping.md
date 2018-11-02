@@ -12,27 +12,19 @@ Gateway
 `{{execute T1}}
 
 Destination rules:
-`oc apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
+`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/destination-rule-all-mtls.yaml
 `{{execute T1}}
 
-Virtual Services:
-`oc apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
+Virtual Services, Enviemos todo el trafico a la versión 1 del servicio Reviews:
+`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-reviews-v2-v3.yaml
 `{{execute T1}}
 
 Generemos tráfico con Postman
 
-Enviemos todo el trafico a la versión 1 de todos los servicios:
-`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-all-v1.yaml
-`{{execute T1}}
-
 Enviemos todo el trafico a la versión 2 de todos los servicios:
-`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-all-v2.yaml
+`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-reviews-v2.yaml
 `{{execute T1}}
 
-Enviemos todo el trafico a la versión 3 del servicio reviews:
+Virtual Services:
 `oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/networking/virtual-service-reviews-v3.yaml
-`{{execute T1}}
-
-Enviemos todo el trafico a la versión 2 o 3 del servicio reviews:
-`oc apply -f ~/installation/istio-1.0.2/samples/bookinfo/virtual-service-reviews-jason-v2-v3.yaml
 `{{execute T1}}
