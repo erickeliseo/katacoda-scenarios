@@ -1,24 +1,50 @@
-The term service mesh is used to describe the network of microservices that make up such applications and the interactions between them. As a service mesh grows in size and complexity, it can become harder to understand and manage. Its requirements can include discovery, load balancing, failure recovery, metrics, and monitoring. A service mesh also often has more complex operational requirements, like A/B testing, canary releases, rate limiting, access control, and end-to-end authentication.
+To install Istio in the cluster, we need first to make sure that we are logged in as an `system:admin` user.
 
-Istio provides behavioral insights and operational control over the service mesh as a whole, offering a complete solution to satisfy the diverse requirements of microservice applications. It provides a number of key capabilities uniformly across a network of services:
+To log in the OpenShift cluster, type `oc login -u system:admin`{{execute T1}}
 
-- **Traffic Management**. Control the flow of traffic and API calls between services, make calls more reliable, and make the network more robust in the face of adverse conditions.
+Now that you are logged in, it's time to extract the existing istio installation: `tar -xvzf istio-1.0.2-linux.tar.gz`{{execute T1}}
 
-- **Observability**. Gain understanding of the dependencies between services and the nature and flow of traffic between them, providing the ability to quickly identify issues.
+To allow OpenShift/Kubernetes to understand those values, we first need to install the 'CustomResourceDefinitions' file using the command `oc apply -f ~/installation/istio-1.0.2/install/kubernetes/helm/istio/templates/crds.yaml`{{execute T1}}
 
-- **Policy Enforcement**. Apply organizational policy to the interaction between services, ensure access policies are enforced and resources are fairly distributed among consumers. Policy changes are made by configuring the mesh, not by changing application code.
+To allow OpenShift/Kubernetes to understand those values, we first need to install the 'CustomResourceDefinitions' file using the command `oc apply -f ~/installation/istio-1.0.2/install/kubernetes/istio-demo-auth.yaml`{{execute T1}}
 
-- **Service Identity and Security**. Provide services in the mesh with a verifiable identity and provide the ability to protect service traffic as it flows over networks of varying degrees of trustability.
+To watch the creation of the pods, execute `oc get pods -w -n istio-system`{{execute T1}}
 
-In addition to these behaviors, Istio is designed for extensibility to meet diverse deployment needs:
+Once that they are all `Running`, you can hit `CTRL+C`. This concludes this scenario.
 
-- **Platform Support**. Istio is designed to run in a variety of environments including ones that span Cloud, on-premise, Kubernetes, Mesos etc. We’re initially focused on Kubernetes but are working to support other environments soon.
+## Create external routes
 
-- **Integration and Customization**. The policy enforcement component can be extended and customized to integrate with existing solutions for ACLs, logging, monitoring, quotas, auditing and more.
+OpenShift uses the concept of Routes to expose HTTP services outside the cluster.
 
-These capabilities greatly decrease the coupling between application code, the underlying platform, and policy. This decreased coupling not only makes services easier to implement, but also makes it simpler for operators to move application deployments between environments or to new policy schemes. Applications become inherently more portable as a result.
+Let's create routes to external services like `Grafana`, `Prometheus`, `Tracing`, etc using the following command:
+
+`oc expose svc istio-ingressgateway -n istio-system; \
+oc expose svc servicegraph -n istio-system; \
+oc expose svc grafana -n istio-system; \
+oc expose svc prometheus -n istio-system; \
+oc expose svc tracing -n istio-system`{{execute interrupt T1}}
+
+## Add Istio to the path
+
+Now we need to add `istioctl` to the path.
+
+Execute `export PATH=$PATH:~/installation/istio-1.0.2/bin`{{execute interrupt T1}}.
+
+Now try it. Check the version of `istioctl`.
+
+Execute `istioctl version`{{execute T1}}.
 
 
-## What is Traffic?
 
-Using Istio’s traffic management model essentially decouples traffic flow and infrastructure scaling, letting operators specify via Pilot what rules they want traffic to follow rather than which specific pods/VMs should receive traffic - Pilot and intelligent Envoy proxies look after the rest. So, for example, you can specify via Pilot that you want 5% of traffic for a particular service to go to a canary version irrespective of the size of the canary deployment, or send traffic to a particular version depending on the content of the request.
+
+
+#tar -xvzf istio-1.0.2-linux.tar.gz
+export PATH="$PATH:~/installation/istio-1.0.2/bin"
+#oc apply -f ~/installation/istio-1.0.2/install/kubernetes/helm/istio/templates/crds.yaml
+#oc apply -f ~/installation/istio-1.0.2/install/kubernetes/istio-demo-auth.yaml
+# Exponer Servicios
+#oc expose svc istio-ingressgateway -n istio-system; \
+#oc expose svc servicegraph -n istio-system; \
+#oc expose svc grafana -n istio-system; \
+#oc expose svc prometheus -n istio-system; \
+#oc expose svc tracing -n istio-system
